@@ -1,0 +1,45 @@
+body{
+    /* margin:0; */
+    font-family:Arial, Helvetica, sans-serif
+}
+.container{
+    padding: 16px;
+
+}
+.container>div h2{
+    text-align: center;
+}
+.intro{
+    margin: -16px; /*16px/-16px*/
+    padding: 16px;
+    background-color: #2fe91e54;
+    text-align: center;
+}
+.intro img{
+    width: 300px;
+    height: 350px;
+}
+.socials img{
+    width: 20px;
+    height: 20px;
+}
+.socials a{
+    text-decoration:none;
+    margin:auto 16px;
+}
+p{
+    font-size: 1rem;
+}
+table,
+tr,
+th,
+td{
+    border:solid 1px;
+    border-collapse: collapse;
+}
+th,td{
+    padding:8px;
+}
+table{
+    width:100%;
+}
