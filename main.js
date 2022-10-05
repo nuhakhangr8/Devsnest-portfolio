@@ -1,13 +1,16 @@
 const dynamicContent = document.getElementById("dynamic-text");
-console.log(dynamicContent);
+
 
 const phrases = ["a Software Engineer....", "Student....", "Fullstack Web Developer"];
 
 //to keep track of letters so far
 let letterIndex = 0;
 let phraseIndex=0;
+const typingSpeed=150;
+const erasingSpeed=75;
+
 function printLetters(phrase) {
-  if(letterIndex==phrase.length){
+  if(letterIndex===phrase.length){
     //create a function to clear letters
     clearLetter();
   }
@@ -16,20 +19,25 @@ function printLetters(phrase) {
     letterIndex = letterIndex + 1;
     setTimeout(function() {
       printLetters(phrase)
-    },300)
+    },typingSpeed)
   }
 }
 
 function clearLetter(){
-  if(letterIndex > -1){
+  if (letterIndex==-1){
+    phraseIndex += (phraseIndex+1)%phrases.length;
+    letterIndex=0;
+    printLetters(phrases[phraseIndex])
+  }
+  else if(letterIndex > -1){
     let updatedPhrase= "";
     for (let index=0;index<letterIndex;index++){
       updatedPhrase += phrases[phraseIndex].charAt(index);
     }
     dynamicContent.textContent = updatedPhrase;
     letterIndex-=1
-    setTimeout(clearLetter,100);
+    setTimeout(clearLetter,erasingSpeed);
   }
 }
-  printLetters(phrases[0]);
+printLetters(phrases[phraseIndex])
 //1000 milli sec= 1sec
