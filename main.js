@@ -41,3 +41,5 @@ function clearLetter(){
 }
 printLetters(phrases[phraseIndex])
 //1000 milli sec= 1sec
+
+// live link:https://nuha-portfolio.netlify.app/
