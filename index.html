@@ -8,8 +8,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class='container'>
-        <div class="intro">
+    <header>
+        <nav>
+            <a href="#about-me">About me</a>
+            <a href="#qualification">Qualification</a>
+            <a href="#hobbies">Hobbies</a>
+            <a href="#technology">Technology</a><a href="#contact-me">Contact me</a>
+            
+        </nav>
+    </header>
+    <main class='container'>
+        <article class="intro">
             <img src='pfp.png'/>
             <h1>Hi, I'm Nuha</h1>
             <p>I am <span id="dynamic-text" class="dynamic-text-color"></span></p>
@@ -25,27 +34,27 @@
                 </a>
             </p>
                     
-        </div>
+        </article>
     
-        <div>
-            <h2>About mahh life</h2>
+        <section id="about-me">
+            <h2>About me</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores ratione nulla adipisci tempora a id omnis, sit culpa sint nesciunt in voluptatibus et sed facere expedita, labore recusandae. Molestiae, facere.</p>
-        </div>
+        </section>
 
-        <div>
+        <section id="qualification">
         <h2>Qualifications</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, fugit ipsum, quidem consequuntur alias iusto rem molestias officiis totam, nihil nesciunt aut. Repellat asperiores quidem officia deleniti, earum harum doloribus.</p>
-        <div>
+        <section>
         
-        <div>
+        <section id="hobbies">
             <h2>Hobbies</h2>
             <ul>
                 <li>walking</li>
                 <li>talking to birds</li>
                 <li></li>
             </ul>
-        </div>
-        <div>
+        </section>
+        <section id="technology">
             <h2>Technologies</h2>
             <table>
             <tr>
@@ -69,26 +78,30 @@
             <td>NA</td>
             </tr>
         </table>
-    </div id="contact-me">
+        </section>
+    <section id="contact-me">
         <form name="contact" method="post" id="contact" data-netlify="true">
             <h1>Contact Me</h1>
-            <div>
+            <section>
                 <label for="first-name">First Name</label>
                 <input type="text" name="first-name" id="first-name" required></input>
-            </div>
-            <div>
+            </section>
+            <section>
                 <label for="last-name">Last Name</label>
                 <input type="text" name="last-name" id="last-name" required></input>
-            </div>
-            <div>
+            </section>
+            <section>
                 <label for="message">Message</label>
                 <textarea name="message" id="message" cols="30" rows="10"></textarea>
-            </div>
+            </section>
             <button type="submit"> Send</button>
         </form>
-    <div>
+    </section>
+    <footer>
+        Made with 🫶 by Nuha ©️2022
 
-    </div>
+    </footer>
+    </main>
     <script src="main.js"></script>
 </body>
 </html>
