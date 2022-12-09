@@ -8,18 +8,39 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <section class="menu">
+        <button id="close-menu">&times;</button>
         <nav>
+            <ul>
+                <li><a href="#about-me">About me</a></li>
+                <li>
+                    <a href="#qualification">Qualification</a>
+                </li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#technology">Technology</a></li>
+                
+                <li><a href="#contact-me">Contact me</a></li>
+                
+            
+            </ul>
+        </nav>
+    </section>
+    <header class="header">
+        <nav class="default-nav">
             <a href="#about-me">About me</a>
             <a href="#qualification">Qualification</a>
             <a href="#hobbies">Hobbies</a>
             <a href="#technology">Technology</a><a href="#contact-me">Contact me</a>
             
         </nav>
+        <nav class="mobile-nav">
+            <button id="menu-button">Menu</button>
+            
+        </nav>
     </header>
     <main class='container'>
         <article class="intro">
-            <img src='pfp.png'/>
+            <img id="profile-image"src='pfp.png'/>
             <h1>Hi, I'm Nuha</h1>
             <p>I am <span id="dynamic-text" class="dynamic-text-color"></span></p>
             <p class="socials">
@@ -54,31 +75,44 @@
                 <li></li>
             </ul>
         </section>
+
+       
         <section id="technology">
             <h2>Technologies</h2>
-            <table>
-            <tr>
-            <th>Frontend</th>
-            <th>Backend</th>
-            <th>Database</th>
-            </tr>
-            <tr>
-            <td>html</td>
-            <td>node.js</td>
-            <td>NA</td>
-            </tr>
-            <tr>
-            <td>css</td>
-            <td>python</td>
-            <td>NA</td>
-            </tr>
-            <tr>
-            <td>javascript</td>
-            <td>NA</td>
-            <td>NA</td>
-            </tr>
-        </table>
-        </section>
+            <section class="container">
+                <section class="card">
+                    <header>
+                        <h1>Frontend</h1>
+                        
+                    </header>
+                    <ul><li>html</li>
+                        <li>node.js</li>
+                        <li>NA</li></ul>
+                    
+                </section>
+                <section class="card">
+                    <header>
+                        <h1>Backend</h1>
+                        
+                    </header>
+                    <ul>
+                        <li>css</li>
+                        <li>python</li>
+                        <li>NA</li>
+                    </ul>
+                </section>
+                <section class="card">
+                    <header>
+                        <h1>Database</h1>
+                    </header>
+                    <ul> <li>javascript</li>
+                        <li>NA</li>
+                        <li>NA</li></ul>
+                </section>
+              
+            </section>
+            </section>
+           
     <section id="contact-me">
         <form name="contact" method="post" id="contact" data-netlify="true">
             <h1>Contact Me</h1>
@@ -103,5 +137,6 @@
     </footer>
     </main>
     <script src="main.js"></script>
+    <script src="menu.js"></script>
 </body>
 </html>

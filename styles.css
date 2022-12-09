@@ -1,26 +1,64 @@
 *{
     box-sizing: border-box;
 }
-html{
+:root{
     scroll-behavior: smooth;
+    --background-color:#2fe91e54;
+    --secondary-color:hsl(225,85%,57%);
+    --text-color: hsl(240deg,95%,8%);
+    --intro-color:hsl(0,0%,85%);
+    --shadow-color:hsl(225 10%  83% );
+    --shadow-color-dark:hsl(225 18% 53%);
+
+
+    --font-size-small:0.5rem;
+    --font-size-regular:1rem;
+    --font-size-large:1.5rem;
+    --font-size-xl:2rem;
+
+    --spacing-regular:16px;
+    --spacing-small:calc(var(--spacing-regular)/2);
+
 }
 body{
     margin:0; 
-    font-family:Arial, Helvetica, sans-serif
+    font-family:Arial, Helvetica, sans-serif;
+    background-color:var(--background-color);
+    color:var(--text-color);
+    font-size: var(--font-size-large);
 }
 
-header{
+.header{
     padding: 16px;
-    position: sticky;
+    position: static;
     top:0;
-    border-bottom: 4px solid;
-    background-color: whitesmoke;
+    background-color: var(--background-color);
+    z-index: 1;
+    border:1px solid ;
+}
+nav a{
+    text-decoration: none;
+    color:inherit;
+    font-size: var(--font-size-regular);
+}
+nav a:hover,
+nav a:visited:hover{
     
+    color:var(--secondary-color);
+}
+nav a:visited{
+    color:inherit;
 }
 header nav>a{
-    margin:16px;
-
+    margin-right:16px;
+   
 }
+header nav>a:last-child{
+    margin-right:revert;
+    
+}
+
+
 footer{
     padding:16px;
     text-align:center;
@@ -30,18 +68,26 @@ footer{
     padding: 16px;
 
 }
+section {
+    scroll-margin-top: calc(100px - (2*var(--spacing-regular))) ;
+}
 .container>section h2{
     text-align: center;
 }
 .intro{
     margin: -16px; /*16px/-16px*/
     padding: 16px;
-    background-color: #2fe91e54;
+    background-color: var(--intro-color);
     text-align: center;
 }
 .intro img{
     width: 300px;
     height: 350px;
+    border-radius: 16px;
+    filter: drop-shadow(2px 4px 6px black);
+    /* drop shadow only works on transparent imag */
+
+    
 }
 .socials img{
     width: 20px;
@@ -67,10 +113,7 @@ th,td{
 table{
     width:100%;
 }
-p{
-  font-size:1.5rem;
 
-}
 .dynamic-text-color{
   color:#00000091;
 }
@@ -85,6 +128,7 @@ form#contact{
 #contact label{
     display:block;
     font-weight: 600;
+    font-size: var(--font-size-regular);
 
 }
 #contact input,
@@ -97,4 +141,104 @@ form#contact{
 
 #contact-me{
     margin-top:16px;
+}
+#technology .container{
+    display: grid;
+    grid-template-columns:repeat(auto-fit,repeat(300px,1fr));
+    /* place-items: center; */
+    gap: var(--spacing-regular);   
+    justify-items: center; 
+}
+.card{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    padding:var(--spacing-regular);
+    box-shadow:3px 3px 8px 5px var(--shadow-color);
+    width:100%;
+    border-radius: var(--spacing-regular);
+    transition: transform .4s ease-in, box-shadow .4s ease-in-out;
+}
+.card:hover{
+    box-shadow:3px 3px 8px 9px var(--shadow-color-dark);
+    transform:translateY(calc(-1*var(--spacing-small)));
+}
+.card ul{
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+card header h1 {
+    margin:0;
+}
+
+.mobile-nav,section.menu{
+    display:none;
+}
+@media (width<500px){
+    .default-nav{
+        display:none;
+    }
+    .mobile-nav{
+        display:revert;
+    }
+    #menu-button{
+        display:block;
+        background:var(--background-color);
+        color:var(--text-color);
+        border-radius:8px;
+        margin-left: auto;
+        border-color: var(--text-color);
+
+    }
+
+    section.menu{
+        display:revert;
+        height:0;
+        overflow:hidden;
+        position: fixed;
+        top:0;
+        z-index:1;
+        background: var(--background-color);
+        color:var(--text-color);
+        width:100%;
+        transition: height 0.8s ease-in-out;
+    }
+    section.menu ul {
+        list-style: none;
+    }
+    section.menu ul> li {
+        margin-bottom: 16px;
+        font-size: 1.5rem;
+    }
+    section.menu nav {
+        margin-top: 48px;
+    }
+    section.menu nav a {
+
+        font-size: var(--font-size-large);
+    }
+    #close-menu{
+        position:absolute;
+        right:16px;
+        top:16px;
+        background: transparent;
+        font-size: var(--font-size-xl);
+        border:none;
+        color:var(--text-colore)
+    }
+}
+@media (width<=450px){
+    #profile-image{
+        width:100%;
+    }
+}
+@media (prefers-color-scheme: dark){
+    body{
+        --background-color:hsl(240deg,80%,5%);
+        --text-color:hsl(240deg,95%,100%);
+        --intro-color:hsl(0,0%,18%);
+    }
 }
